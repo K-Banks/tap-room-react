@@ -1,4 +1,4 @@
-#### _Tap Room using React_
+# _Tap Room using React_
 
 #### By: _**Kayl Eubanks**_
 
