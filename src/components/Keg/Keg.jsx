@@ -11,7 +11,7 @@ function Keg(props){
       <ul>
         <li>Price: ${props.price}</li>
         <li>ABV: {props.abv}%</li>
-        <li>Pints remaining: {props.remaining}</li>
+        <li>Pints remaining: {props.remaining}  <button>Purchase</button></li>
       </ul>
     </div>
   );
@@ -24,6 +24,6 @@ Keg.propTypes = {
   abv: PropTypes.number.isRequired,
   remaining: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
-}
+};
 
 export default Keg;
