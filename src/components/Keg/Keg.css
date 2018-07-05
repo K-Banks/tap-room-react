@@ -1,15 +1,21 @@
 .keg {
-  border: 1px solid black;
+  background: linear-gradient(#efe3f5,#91ceef);
   margin: 10px;
+  color: #304b75;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 button {
-  background: linear-gradient(#b02e2c,#6c1b21);
-  color: #fadfda;
+  background: linear-gradient(#eca0ce,#91ceee);
+  color: #375585;
+  border-radius: 20px; 
   text-shadow: 1px 1px #627c54;
   display: block;
   margin: auto;
   margin-bottom: 10px;
+}
+
+button:hover {
+  background: linear-gradient(#91ceee,#eca0ce);
 }
