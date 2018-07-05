@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 
 function Keg(props){
   return (
-    <div>
+    <div className={styles.keg}>
       <h3><strong>{props.name}</strong></h3>
       <h4>Brewery: {props.brand}</h4>
       <p>{props.description}</p>
       <ul>
         <li>Price: ${props.price}</li>
         <li>ABV: {props.abv}%</li>
-        <li>Pints remaining: {props.remaining}  <button>Purchase</button></li>
+        <li>Pints remaining: {props.remaining}</li>
       </ul>
-      <hr/>
+      <button className={styles.button}>Purchase</button>
     </div>
   );
 }

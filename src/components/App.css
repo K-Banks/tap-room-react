@@ -1,0 +1,7 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+  margin: auto;
+  background: linear-gradient(#bd3232c7,#6c1b21e3);
+}

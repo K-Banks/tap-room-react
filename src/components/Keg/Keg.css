@@ -1,0 +1,15 @@
+.keg {
+  border: 1px solid black;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+button {
+  background: linear-gradient(#b02e2c,#6c1b21);
+  color: #fadfda;
+  text-shadow: 1px 1px #627c54;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}

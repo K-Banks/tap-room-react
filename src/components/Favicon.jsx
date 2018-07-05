@@ -6,6 +6,7 @@ ReactDOM.render(
   <div>
     <Favicon url='./assets/images/favicon.ico'/>
   </div>
-  , document.getElementById('root'));
+  , document.getElementById('root')
+);
 
 export default Favicon;
