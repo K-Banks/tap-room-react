@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Header from './Header/Header.jsx';
-import Body from './Body.jsx';
+import UserBody from './UserBody.jsx';
 
 
 function App(){
@@ -9,7 +9,7 @@ function App(){
     <div>
       <Header/>
       <Switch>
-        <Route exact path='/' component={Body}/>
+        <Route exact path='/' component={UserBody}/>
       </Switch>
     </div>
   );

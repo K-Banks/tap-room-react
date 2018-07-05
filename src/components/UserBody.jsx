@@ -3,7 +3,7 @@ import Keg from './Keg/Keg.jsx';
 import Main from './Main/Main.jsx';
 import Edit from './Edit/Edit.jsx';
 
-function Body(){
+function UserBody(){
   return (
     <div>
       <p>HELLO!!!</p>
@@ -14,4 +14,4 @@ function Body(){
   );
 }
 
-export default Body;
+export default UserBody;

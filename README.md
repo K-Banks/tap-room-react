@@ -14,6 +14,9 @@ _This app is a clone of a previous project creating a mock tap room website. Thi
 * Run '$ npm install' to download all needed dependencies.
 * Run '$ npm run start' to serve the app on localhost:8080
 
+## Component Tree
+![Component Tree](./src/assets/READMEImg/TapRoomComponentTree.jpg)
+
 ## Specs
  *
 
