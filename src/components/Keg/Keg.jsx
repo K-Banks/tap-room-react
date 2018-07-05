@@ -13,6 +13,7 @@ function Keg(props){
         <li>ABV: {props.abv}%</li>
         <li>Pints remaining: {props.remaining}  <button>Purchase</button></li>
       </ul>
+      <hr/>
     </div>
   );
 }

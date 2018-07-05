@@ -44,15 +44,15 @@ const masterKegList = [
 function KegList(){
   return (
     <div>
-    {masterKegList.map((keg, index) =>
-      <Keg name={keg.name}
-      brand={keg.brand}
-      price={keg.price}
-      abv={keg.abv}
-      remaining={keg.remaining}
-      description={keg.description}
-      key={index}/>
-    )}
+      {masterKegList.map((keg, index) =>
+        <Keg name={keg.name}
+        brand={keg.brand}
+        price={keg.price}
+        abv={keg.abv}
+        remaining={keg.remaining}
+        description={keg.description}
+        key={index}/>
+      )}
     </div>
   );
 }
