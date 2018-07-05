@@ -6,11 +6,13 @@ import styles from './App.css';
 
 function App(){
   return (
-    <div className={styles.wrapper}>
-      <Header/>
-      <Switch>
-        <Route exact path='/' component={UserBody}/>
-      </Switch>
+    <div className={styles.gradient}>
+      <div className={styles.wrapper}>
+        <Header/>
+        <Switch>
+          <Route exact path='/' component={UserBody}/>
+        </Switch>
+      </div>
     </div>
   );
 }

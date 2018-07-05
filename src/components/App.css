@@ -1,7 +1,10 @@
+.gradient {
+    background: linear-gradient(#f7e9f8,#70c4ec);
+}
+
 .wrapper {
   display: flex;
   flex-wrap: wrap;
   width: 800px;
   margin: auto;
-  background: linear-gradient(#bd3232c7,#6c1b21e3);
 }

@@ -1,7 +1,10 @@
+h2  {
+  text-align: center;
+}
+
 .flex {
     display: flex;
     flex-wrap: wrap;
     width: 800px;
-    border: 1px solid black;
     justify-content: space-around;
 }
