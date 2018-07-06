@@ -1,8 +1,10 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Header from './Header/Header.jsx';
-import UserBody from './UserBody.jsx';
+import Keglist from './KegList/Keglist.jsx';
 import styles from './App.css';
+import Error404 from './Error404/Error404.jsx';
+import Footer from './Footer/Footer.jsx';
 
 function App(){
   return (
@@ -10,8 +12,10 @@ function App(){
       <div className={styles.wrapper}>
         <Header/>
         <Switch>
-          <Route exact path='/' component={UserBody}/>
+          <Route exact path='/' component={Keglist}/>
+          <Route component={Error404}/>
         </Switch>
+        <Footer/>
       </div>
     </div>
   );
