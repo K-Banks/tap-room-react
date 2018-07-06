@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './KegList.css';
 import Keg from '../Keg/Keg.jsx';
+import NewKegForm from '../NewKegForm/NewKegForm.jsx';
 
 const masterKegList = [
   {
@@ -56,6 +57,7 @@ function KegList(){
             key={index}/>
         )}
       </div>
+      <NewKegForm/>
     </div>
   );
 }
