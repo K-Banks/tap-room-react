@@ -17,8 +17,17 @@ _This app is a clone of a previous project creating a mock tap room website. Thi
 ## Component Tree
 ![Component Tree](./src/assets/READMEImg/TapRoomComponentTree.jpg)
 
-## Specs
- *
+## Notes
+ * Designing a component tree is difficult in React without starting to work through the application
+ * How can I change the Header's appearance when navigating to a page that does not exist?
+ * How can I change the favicon? React-favicon is unclear on proper implementation.
+ * Need to re-use the KegList component and hide/show the purchase button based on the route
+
+## Differences between developing in React vs Angular
+  * No services to handle moving information around the app in React
+  * Re-using components is simpler and more dynamic in React
+  * Programming in React without prior planning is difficult and leads to more problems by comparison
+  * Syntax is so much simpler in React
 
 ## Known Issues
 _No known bugs at this time._
