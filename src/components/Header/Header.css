@@ -1,7 +1,14 @@
 .banner {
   text-align: center;
   width: 100%;
+  font-family:
 }
+
+.banner h1 {
+  font-family: fantasy;
+  font-size: 4em;
+}
+
 img {
   width: 100%;
 }

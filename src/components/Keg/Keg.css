@@ -9,9 +9,13 @@
   padding-bottom: 10px;
 }
 
+h4, h3, p {
+  font-family: fantasy;
+  font-style: oblique;
+}
+
 h4 {
   margin-top: 5px;
-  font-weight: 550;
 }
 
 h3 {
@@ -31,9 +35,12 @@ h3 {
 
 button {
   background: linear-gradient(#eca0ce,#91ceee);
-  color: #375585;
+  color: #1f3154;
   border-radius: 20px;
-  text-shadow: 1px 1px #627c54;
+  text-shadow: 1px 1px #b28eaf;
+  font-size: 1.1em;
+  font-family: sans-serif;
+  font-weight: 340;
   display: block;
   margin: auto;
   margin-bottom: 10px;
