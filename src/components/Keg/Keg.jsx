@@ -6,7 +6,7 @@ function Keg(props){
   let admin = null;
   let description = <p>{props.description}</p>;
   if (props.currentRouterPath != null) {
-    admin = <button className={styles.button} onClick={() => {props.onPurchasePint(props.kegId);}}>Purchase</button>;
+    admin = <div className={styles.button}><button onClick={() => {props.onPurchasePint(props.kegId);}}>Purchase</button><button>Edit</button></div>;
     description = null;
   }
   return (
