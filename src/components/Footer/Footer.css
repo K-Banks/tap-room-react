@@ -1,0 +1,9 @@
+.spacer {
+  display: flex;
+  bottom: 0;
+  justify-content: space-between;
+  font-size: 1.2em;
+  padding: 40px 250px 5px 250px;
+  width: 300px;
+  margin: auto;
+}

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 function Footer(){
   return (
-    <div>
+    <div className={styles.spacer}>
       <Link to='/'>Home</Link> | <Link to='/admin'>Admin</Link> | <Link to='/aboutUs'>About Us</Link>
     </div>
   );

@@ -1,5 +1,6 @@
 .gradient {
-    background: linear-gradient(#f7e9f8,#70c4ec);
+  background: linear-gradient(#f7e9f8,#70c4ec);
+  height: 100%;
 }
 
 .wrapper {
@@ -7,4 +8,5 @@
   flex-wrap: wrap;
   width: 800px;
   margin: auto;
+  color: #304b75;
 }
