@@ -6,6 +6,7 @@ import styles from './App.css';
 import Error404 from './Error404/Error404.jsx';
 import Footer from './Footer/Footer.jsx';
 import {v4} from 'uuid';
+import AboutUs from './AboutUs/AboutUs.jsx';
 
 class App extends React.Component {
 
@@ -120,6 +121,7 @@ class App extends React.Component {
             onKegEdit = {this.handleKegEdit}
             onDeleteKeg = {this.handleDeleteKeg}
             currentRouterPath={props.location.pathname}/>}/>
+            <Route path='/aboutUs' component={AboutUs}/>
             <Route component={Error404}/>
           </Switch>
           <Footer/>
