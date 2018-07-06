@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function Keg(props){
   let admin = null;
-  let description = <p>{props.description}</p>;
+  let description = <p className={styles.description}>{props.description}</p>;
   if (props.currentRouterPath != null) {
     admin = <div className={styles.button}><button onClick={() => {props.onPurchasePint(props.kegId);}}>Purchase</button><button>Edit</button></div>;
     description = null;
