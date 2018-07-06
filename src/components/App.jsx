@@ -53,10 +53,12 @@ class App extends React.Component {
         remaining: 57,
         description: 'Something clever about a witch and a cauldron'
       },
-      }
+    },
+      showNewKegForm: false
     };
     this.handlePintPurchase = this.handlePintPurchase.bind(this);
     this.handleNewKegCreation = this.handleNewKegCreation.bind(this);
+    this.handleShowNewKegForm = this.handleShowNewKegForm.bind(this);
   }
 
   handlePintPurchase(kegId) {
@@ -73,6 +75,10 @@ class App extends React.Component {
     this.setState({masterKegList: newMasterKegList});
   }
 
+  handleShowNewKegForm() {
+    this.setState({showNewKegForm: true})
+  }
+
   render(){
     return (
       <div className={styles.gradient}>
@@ -82,6 +88,8 @@ class App extends React.Component {
             <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList}/>}/>
             <Route path='/admin' render={(props)=><KegList kegList={this.state.masterKegList} onPurchasePint={this.handlePintPurchase}
             onNewKegCreation = {this.handleNewKegCreation}
+            showNewKegForm = {this.state.showNewKegForm}
+            onShowNewKegForm = {this.handleShowNewKegForm}
             currentRouterPath={props.location.pathname}/>}/>
             <Route component={Error404}/>
           </Switch>

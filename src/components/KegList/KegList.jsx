@@ -5,6 +5,13 @@ import NewKegForm from '../NewKegForm/NewKegForm.jsx';
 import PropTypes from 'prop-types';
 
 function KegList(props){
+  let newKegForm = null;
+  if (props.showNewKegForm === true && props.currentRouterPath) {
+    newKegForm = <NewKegForm onNewKegCreation = {props.onNewKegCreation}/>;
+  } else if (props.showNewKegForm === false && props.currentRouterPath) {
+    newKegForm = <button onClick={() => {props.onShowNewKegForm()}}>Click here to add a new keg</button>;
+  }
+
   return (
     <div>
       <h2>Beers On Tap:</h2>
@@ -23,7 +30,7 @@ function KegList(props){
           key={kegId}/>;
         })}
       </div>
-      <NewKegForm onNewKegCreation = {props.onNewKegCreation}/>
+      {newKegForm}
     </div>
   );
 }
@@ -32,7 +39,9 @@ KegList.propTypes = {
   kegList: PropTypes.object,
   onPurchasePint: PropTypes.func,
   currentRouterPath: PropTypes.string,
-  onNewKegCreation: PropTypes.func
+  onNewKegCreation: PropTypes.func,
+  showNewKegForm: PropTypes.bool,
+  onShowNewKegForm: PropTypes.func
 };
 
 export default KegList;
