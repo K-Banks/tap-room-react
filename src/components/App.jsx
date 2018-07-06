@@ -54,11 +54,14 @@ class App extends React.Component {
         description: 'Something clever about a witch and a cauldron'
       },
     },
-      showNewKegForm: false
+      showNewKegForm: false,
+      showEditKegForm: false,
+      selectedKeg: ''
     };
     this.handlePintPurchase = this.handlePintPurchase.bind(this);
     this.handleNewKegCreation = this.handleNewKegCreation.bind(this);
     this.handleShowNewKegForm = this.handleShowNewKegForm.bind(this);
+    this.handleShowEditKeg = this.handleShowEditKeg.bind(this);
   }
 
   handlePintPurchase(kegId) {
@@ -76,7 +79,12 @@ class App extends React.Component {
   }
 
   handleShowNewKegForm() {
-    this.setState({showNewKegForm: true})
+    this.setState({showNewKegForm: true});
+  }
+
+  handleShowEditKeg(kegId) {
+    this.setState({showEditKegForm: true});
+    this.setState({selectedKeg: kegId});
   }
 
   render(){
@@ -90,6 +98,9 @@ class App extends React.Component {
             onNewKegCreation = {this.handleNewKegCreation}
             showNewKegForm = {this.state.showNewKegForm}
             onShowNewKegForm = {this.handleShowNewKegForm}
+            onShowEditKegForm = {this.handleShowEditKeg}
+            showEditKegForm = {this.state.showEditKegForm}
+            selectedKegToEdit = {this.state.selectedKeg}
             currentRouterPath={props.location.pathname}/>}/>
             <Route component={Error404}/>
           </Switch>
