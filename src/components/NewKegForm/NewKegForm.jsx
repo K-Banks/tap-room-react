@@ -12,7 +12,13 @@ function NewKegForm(props){
 
   function handleNewKegFormSubmission(event){
     event.preventDefault();
-    props.onNewKegCreation({name: _name.value, brand: _brand.value, price: _price.value, abv: _abv.value, remaining: _remaining.value, description: _description.value});
+    let newPrice = parseFloat(_price.value);
+    let newAbv = parseFloat(_abv.value);
+    let newRemaining = parseInt(_remaining.value);
+    if (newRemaining > 124 || newRemaining < 0) {
+      newRemaining = 124;
+    }
+    props.onNewKegCreation({name: _name.value, brand: _brand.value, price: newPrice, abv: newAbv, remaining: newRemaining, description: _description.value});
     _name.value = '';
     _brand.value = '';
     _price.value = '';
@@ -37,29 +43,22 @@ function NewKegForm(props){
           placeholder='Brewery Name'
           ref={(input) => {_brand=input;}}/>
         <br/>
-        <label>Enter Price ($)</label>
         <input
-          type='number'
+          type='text'
           id='price'
-          min='3'
-          max='12'
+          placeholder='Enter Price ($)'
           ref={(input) => {_price=input;}}/>
         <br/>
-        <label>Enter Alcohol Content (ABV%)</label>
         <input
-          type='number'
+          type='text'
           id='abv'
-          min='0'
-          max='30'
+          placeholder='Enter Alcohol Content (ABV%)'
           ref={(input) => {_abv=input;}}/>
         <br/>
-        <label>Pints remaining in keg (defaults to 124)</label>
         <input
-          type='number'
-          min='0'
-          max='124'
+          type='text'
+          placeholder='Pints remaining in keg (defaults to 124)'
           id='remaining'
-          defaultValue='124'
           ref={(input) => {_remaining=input;}}/>
         <br/>
         <input
