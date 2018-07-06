@@ -54,6 +54,13 @@ class App extends React.Component {
       },
       }
     };
+    this.handlePintPurchase = this.handlePintPurchase.bind(this);
+  }
+
+  handlePintPurchase(kegId) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList[kegId].remaining = newMasterKegList[kegId].remaining - 1;
+    this.setState({masterKegList: newMasterKegList});
   }
 
   render(){
@@ -62,7 +69,7 @@ class App extends React.Component {
         <div className={styles.wrapper}>
           <Header/>
           <Switch>
-            <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList}/>}/>
+            <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} onPurchasePint={this.handlePintPurchase}/>}/>
             <Route component={Error404}/>
           </Switch>
           <Footer/>
