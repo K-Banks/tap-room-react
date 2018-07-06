@@ -71,7 +71,9 @@ class App extends React.Component {
         <div className={styles.wrapper}>
           <Header/>
           <Switch>
-            <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} onPurchasePint={this.handlePintPurchase}/>}/>
+            <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList}/>}/>
+            <Route path='/admin' render={(props)=><KegList kegList={this.state.masterKegList} onPurchasePint={this.handlePintPurchase}
+            currentRouterPath={props.location.pathname}/>}/>
             <Route component={Error404}/>
           </Switch>
           <Footer/>

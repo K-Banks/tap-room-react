@@ -3,6 +3,10 @@ import styles from './Keg.css';
 import PropTypes from 'prop-types';
 
 function Keg(props){
+  let admin = null;
+  if (props.currentRouterPath != null) {
+    admin = <button className={styles.button} onClick={() => {props.onPurchasePint(props.kegId);}}>Purchase</button>;
+  }
   return (
     <div className={styles.keg}>
       <h3><strong>{props.name}</strong></h3>
@@ -13,7 +17,7 @@ function Keg(props){
         <li>ABV: {props.abv}%</li>
         <li>Pints remaining: {props.remaining}</li>
       </ul>
-      <button className={styles.button} onClick={() => {props.onPurchasePint(props.kegId)}}>Purchase</button>
+      {admin}
     </div>
   );
 }
@@ -26,7 +30,8 @@ Keg.propTypes = {
   remaining: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   onPurchasePint: PropTypes.func,
-  kegId: PropTypes.string
+  kegId: PropTypes.string,
+  currentRouterPath: PropTypes.string
 };
 
 export default Keg;

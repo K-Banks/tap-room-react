@@ -19,6 +19,7 @@ function KegList(props){
           description={keg.description}
           onPurchasePint={props.onPurchasePint}
           kegId={kegId}
+          currentRouterPath={props.currentRouterPath}
           key={kegId}/>;
         })}
       </div>
@@ -29,7 +30,8 @@ function KegList(props){
 
 KegList.propTypes = {
   kegList: PropTypes.object,
-  onPurchasePint: PropTypes.func
+  onPurchasePint: PropTypes.func,
+  currentRouterPath: PropTypes.string
 };
 
 export default KegList;
