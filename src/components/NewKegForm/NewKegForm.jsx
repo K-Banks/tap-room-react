@@ -18,13 +18,22 @@ function NewKegForm(props){
     if (newRemaining > 124 || newRemaining < 0) {
       newRemaining = 124;
     }
-    props.onNewKegCreation({name: _name.value, brand: _brand.value, price: newPrice, abv: newAbv, remaining: newRemaining, description: _description.value});
-    _name.value = '';
-    _brand.value = '';
-    _price.value = '';
-    _abv.value = '';
-    _remaining.value = '';
-    _description.value = '';
+    if (_name.value === '' || _brand.value === '' || _price.value === '' || _abv.value === '' || _remaining.value === '' || _description.value === '') {
+      _name.placeholder = 'Require Valid Name';
+      _brand.placeholder = 'Require Valid Brewery';
+      _price.placeholder = 'Require Valid Price';
+      _abv.placeholder = 'Require Valid ABV';
+      _remaining.placeholder = 'Require Valid Pints Remaining';
+      _description.placeholder = 'Require Valid description';
+    } else {
+      props.onNewKegCreation({name: _name.value, brand: _brand.value, price: newPrice, abv: newAbv, remaining: newRemaining, description: _description.value});
+      _name.value = '';
+      _brand.value = '';
+      _price.value = '';
+      _abv.value = '';
+      _remaining.value = '';
+      _description.value = '';
+    }
   }
 
   return(
