@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Header from './Header/Header.jsx';
-import Keglist from './KegList/Keglist.jsx';
+import KegList from './KegList/KegList.jsx';
 import styles from './App.css';
 import Error404 from './Error404/Error404.jsx';
 import Footer from './Footer/Footer.jsx';

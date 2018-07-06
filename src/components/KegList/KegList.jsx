@@ -17,7 +17,7 @@ function KegList(props){
           abv={keg.abv}
           remaining={keg.remaining}
           description={keg.description}
-          key={keg}/>;
+          key={kegId}/>;
         })}
       </div>
       <NewKegForm/>
