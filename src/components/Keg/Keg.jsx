@@ -4,6 +4,12 @@ import PropTypes from 'prop-types';
 
 function Keg(props){
   let admin = null;
+  let _name = null;
+  let _brand = null;
+  let _price = null;
+  let _abv = null;
+  let _remaining = null;
+  let _description = null;
   let description = <p className={styles.description}>{props.description}</p>;
 
   if (props.currentRouterPath != null) {
@@ -12,7 +18,7 @@ function Keg(props){
   }
 
   if (props.showEditKegForm === true && props.selectedKegToEdit === props.kegId) {
-    admin = <form>
+    admin = <form onSubmit={handleEditKegFormSubmission}>
       <input
         type='text'
         id='name'
@@ -52,6 +58,18 @@ function Keg(props){
       <button>Delete</button>
     </form>;
   }
+
+  function handleEditKegFormSubmission(event){
+    event.preventDefault();
+    let newPrice = parseFloat(_price.value);
+    let newAbv = parseFloat(_abv.value);
+    let newRemaining = parseInt(_remaining.value);
+    if (newRemaining > 124 || newRemaining < 0) {
+      newRemaining = 124;
+    }
+    props.onKegEdit({name: _name.value, brand: _brand.value, price: newPrice, abv: newAbv, remaining: newRemaining, description: _description.value}, props.kegId);
+  }
+
   return (
     <div className={styles.keg}>
       <h3><strong>{props.name}</strong></h3>
@@ -77,7 +95,8 @@ Keg.propTypes = {
   currentRouterPath: PropTypes.string,
   onShowEditKegForm: PropTypes.func,
   showEditKegForm: PropTypes.bool,
-  selectedKegToEdit: PropTypes.string
+  selectedKegToEdit: PropTypes.string,
+  onKegEdit: PropTypes.func
 };
 
 export default Keg;

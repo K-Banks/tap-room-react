@@ -62,6 +62,7 @@ class App extends React.Component {
     this.handleNewKegCreation = this.handleNewKegCreation.bind(this);
     this.handleShowNewKegForm = this.handleShowNewKegForm.bind(this);
     this.handleShowEditKeg = this.handleShowEditKeg.bind(this);
+    this.handleKegEdit = this.handleKegEdit.bind(this);
   }
 
   handlePintPurchase(kegId) {
@@ -87,6 +88,13 @@ class App extends React.Component {
     this.setState({selectedKeg: kegId});
   }
 
+  handleKegEdit(kegEdit, kegId) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList[kegId] = kegEdit;
+    this.setState({masterKegList: newMasterKegList});
+    this.setState({showEditKegForm: false});
+  }
+
   render(){
     return (
       <div className={styles.gradient}>
@@ -101,6 +109,7 @@ class App extends React.Component {
             onShowEditKegForm = {this.handleShowEditKeg}
             showEditKegForm = {this.state.showEditKegForm}
             selectedKegToEdit = {this.state.selectedKeg}
+            onKegEdit = {this.handleKegEdit}
             currentRouterPath={props.location.pathname}/>}/>
             <Route component={Error404}/>
           </Switch>

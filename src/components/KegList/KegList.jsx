@@ -31,6 +31,7 @@ function KegList(props){
           onShowEditKegForm={props.onShowEditKegForm}
           showEditKegForm={props.showEditKegForm}
           selectedKegToEdit={props.selectedKegToEdit}
+          onKegEdit = {props.onKegEdit}
           key={kegId}/>;
         })}
       </div>
@@ -47,7 +48,8 @@ KegList.propTypes = {
   onShowNewKegForm: PropTypes.func,
   onShowEditKegForm: PropTypes.func,
   showEditKegForm: PropTypes.bool,
-  selectedKegToEdit: PropTypes.string
+  selectedKegToEdit: PropTypes.string,
+  onKegEdit: PropTypes.func
 };
 
 export default KegList;
