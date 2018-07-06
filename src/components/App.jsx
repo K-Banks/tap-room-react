@@ -79,6 +79,7 @@ class App extends React.Component {
     let newKegId = v4();
     let newMasterKegList = Object.assign({}, this.state.masterKegList, {[newKegId]: newKeg});
     this.setState({masterKegList: newMasterKegList});
+    this.setState({showNewKegForm: false});
   }
 
   handleShowNewKegForm() {
