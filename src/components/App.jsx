@@ -59,7 +59,9 @@ class App extends React.Component {
 
   handlePintPurchase(kegId) {
     let newMasterKegList = Object.assign({}, this.state.masterKegList);
-    newMasterKegList[kegId].remaining = newMasterKegList[kegId].remaining - 1;
+    if (newMasterKegList[kegId].remaining > 0) {
+      newMasterKegList[kegId].remaining = newMasterKegList[kegId].remaining - 1;
+    }
     this.setState({masterKegList: newMasterKegList});
   }
 

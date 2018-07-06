@@ -13,7 +13,7 @@ function Keg(props){
         <li>ABV: {props.abv}%</li>
         <li>Pints remaining: {props.remaining}</li>
       </ul>
-      <button className={styles.button} onClick={props.onPurchasePint(props.kegId)}>Purchase</button>
+      <button className={styles.button} onClick={() => {props.onPurchasePint(props.kegId)}}>Purchase</button>
     </div>
   );
 }
