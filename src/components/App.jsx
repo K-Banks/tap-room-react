@@ -6,19 +6,22 @@ import styles from './App.css';
 import Error404 from './Error404/Error404.jsx';
 import Footer from './Footer/Footer.jsx';
 
-function App(){
-  return (
-    <div className={styles.gradient}>
-      <div className={styles.wrapper}>
-        <Header/>
-        <Switch>
-          <Route exact path='/' component={Keglist}/>
-          <Route component={Error404}/>
-        </Switch>
-        <Footer/>
+class App extends React.Component {
+
+  render(){
+    return (
+      <div className={styles.gradient}>
+        <div className={styles.wrapper}>
+          <Header/>
+          <Switch>
+            <Route exact path='/' component={Keglist}/>
+            <Route component={Error404}/>
+          </Switch>
+          <Footer/>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
