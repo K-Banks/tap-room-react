@@ -47,7 +47,7 @@ function NewKegForm(){
           min='0'
           max='124'
           id='remaining'
-          value='124'
+          defaultValue='124'
           ref={(input) => {_remaining=input;}}/>
         <br/>
         <input
@@ -55,6 +55,7 @@ function NewKegForm(){
           id='description'
           placeholder='Description of Beer'
           ref={(input) => {_description=input;}}/>
+        <button type='submit'>Add new beer</button>
       </form>
     </div>
   );
