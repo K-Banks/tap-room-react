@@ -14,11 +14,9 @@ function Keg(props){
       <h3><strong>{props.name}</strong></h3>
       <h4>Brewery: {props.brand}</h4>
       {description}
-      <ul>
-        <li>Price: ${props.price}</li>
-        <li>ABV: {props.abv}%</li>
-        <li>Pints remaining: {props.remaining}</li>
-      </ul>
+      <p>Price: ${props.price}</p>
+      <p>ABV: {props.abv}%</p>
+      <p>Pints remaining: {props.remaining}</p>
       {admin}
     </div>
   );

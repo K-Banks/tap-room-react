@@ -6,11 +6,13 @@
   padding-right: 10px;
 }
 
-.keg li {
-  list-style: none;
+.keg p {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .button {
+  margin-top: 14px;
   display: flex;
 }
 
