@@ -39,7 +39,7 @@ function NewKegForm(props){
   return(
     <div>
       <h1>New Keg Form</h1>
-      <form onSubmit={handleNewKegFormSubmission}>
+      <form className={styles.formStyler} onSubmit={handleNewKegFormSubmission}>
         <input
           type='text'
           id='name'

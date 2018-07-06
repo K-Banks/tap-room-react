@@ -18,7 +18,7 @@ function Keg(props){
   }
 
   if (props.showEditKegForm === true && props.selectedKegToEdit === props.kegId) {
-    admin = <form onSubmit={handleEditKegFormSubmission}>
+    admin = <form className = {styles.formStyler} onSubmit={handleEditKegFormSubmission}>
       <input
         type='text'
         id='name'
