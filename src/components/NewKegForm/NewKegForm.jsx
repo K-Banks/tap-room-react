@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './NewKegForm.css';
+import PropTypes from 'prop-types';
 
-function NewKegForm(){
+function NewKegForm(props){
   let _name = null;
   let _brand = null;
   let _price = null;
@@ -9,10 +10,21 @@ function NewKegForm(){
   let _remaining = null;
   let _description = null;
 
+  function handleNewKegFormSubmission(event){
+    event.preventDefault();
+    props.onNewKegCreation({name: _name.value, brand: _brand.value, price: _price.value, abv: _abv.value, remaining: _remaining.value, description: _description.value});
+    _name.value = '';
+    _brand.value = '';
+    _price.value = '';
+    _abv.value = '';
+    _remaining.value = '';
+    _description.value = '';
+  }
+
   return(
     <div>
       <h1>New Keg Form</h1>
-      <form>
+      <form onSubmit={handleNewKegFormSubmission}>
         <input
           type='text'
           id='name'
@@ -54,11 +66,15 @@ function NewKegForm(){
           type='textarea'
           id='description'
           placeholder='Description of Beer'
-          ref={(input) => {_description=input;}}/>
+          ref={(textarea) => {_description=textarea;}}/>
         <button type='submit'>Add new beer</button>
       </form>
     </div>
   );
 }
+
+NewKegForm.propTypes={
+  onNewKegCreation: PropTypes.func
+};
 
 export default NewKegForm;

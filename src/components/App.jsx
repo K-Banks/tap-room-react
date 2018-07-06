@@ -5,6 +5,7 @@ import KegList from './KegList/KegList.jsx';
 import styles from './App.css';
 import Error404 from './Error404/Error404.jsx';
 import Footer from './Footer/Footer.jsx';
+import {v4} from 'uuid';
 
 class App extends React.Component {
 
@@ -55,6 +56,7 @@ class App extends React.Component {
       }
     };
     this.handlePintPurchase = this.handlePintPurchase.bind(this);
+    this.handleNewKegCreation = this.handleNewKegCreation.bind(this);
   }
 
   handlePintPurchase(kegId) {
@@ -62,6 +64,12 @@ class App extends React.Component {
     if (newMasterKegList[kegId].remaining > 0) {
       newMasterKegList[kegId].remaining = newMasterKegList[kegId].remaining - 1;
     }
+    this.setState({masterKegList: newMasterKegList});
+  }
+
+  handleNewKegCreation(newKeg) {
+    let newKegId = v4();
+    let newMasterKegList = Object.assign({}, this.state.masterKegList, {[newKegId]: newKeg});
     this.setState({masterKegList: newMasterKegList});
   }
 
@@ -73,6 +81,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList}/>}/>
             <Route path='/admin' render={(props)=><KegList kegList={this.state.masterKegList} onPurchasePint={this.handlePintPurchase}
+            onNewKegCreation = {this.handleNewKegCreation}
             currentRouterPath={props.location.pathname}/>}/>
             <Route component={Error404}/>
           </Switch>
