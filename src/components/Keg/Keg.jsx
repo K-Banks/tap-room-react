@@ -55,7 +55,7 @@ function Keg(props){
         defaultValue={props.description}
         ref={(textarea) => {_description=textarea;}}/>
       <button type='submit'>Submit Edits</button>
-      <button>Delete</button>
+      <button onClick={() => {props.onDeleteKeg(props.kegId);}}>Delete</button>
     </form>;
   }
 
@@ -96,7 +96,8 @@ Keg.propTypes = {
   onShowEditKegForm: PropTypes.func,
   showEditKegForm: PropTypes.bool,
   selectedKegToEdit: PropTypes.string,
-  onKegEdit: PropTypes.func
+  onKegEdit: PropTypes.func,
+  onDeleteKeg: PropTypes.func
 };
 
 export default Keg;
